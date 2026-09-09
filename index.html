@@ -71,6 +71,15 @@
   <p>A chatbot recruiters use to ask questions about me, with five automatic judges scoring every answer. <strong>What went wrong:</strong> I once pushed a change that silently hung every request, no errors, no logs; I built ten temporary diagnostic endpoints to search the system in production and found a one-line locking bug. <strong>What I learned:</strong> keeping something alive is a different job from shipping it.</p>
   <p class="links"><a href="https://chat.rayhanpatel.com">Try it</a><a href="https://github.com/Rayhanpatel/AI-Resume-Agent">Code</a></p>
 
+  <h3>EvoRank — research, RecSys 2026 workshop paper</h3>
+  <p class="meta">co-authored with Shabaz Patel · presenting in Minneapolis, Sep 28, 2026</p>
+  <p>An LLM-guided loop that evolves whole search-ranking pipelines for e-commerce, tested on a public Expedia dataset with three competing goals. <strong>What went wrong:</strong> the first campaign looked like it worked and was not; its gains existed only on the small data it used to pick winners, and re-scored on sixty thousand held-out queries they were noise. We built a gate that predicts, before spending anything on the model, whether a search space has enough real signal to be worth it. The second campaign beat a tuned baseline on every objective, held up on held-out data, and landed in the top six percent of the original competition. <strong>What I learned:</strong> do not believe a loop that grades its own homework.</p>
+  <p class="links"><a href="https://github.com/shabazpatel/evorank">Paper and code</a></p>
+
+  <h3>3E — AI engineering intern, summer 2026</h3>
+  <p class="meta">Bethesda, MD · AI platform team</p>
+  <p>The company was deciding how its AI agents should remember things. I benchmarked three open-source memory systems on two public benchmarks under a locked protocol, then noticed the judge model grading every answer had never itself been checked, so I calibrated it against blinded human graders. <strong>The surprise:</strong> humans accepted vague answers more often than the judge did, and the scoring rubric, not the judge model, was what mattered. Wrote the architecture proposal for the team's memory layer and helped build the service on AWS. <strong>What I learned:</strong> if the protocol is not locked, the numbers are opinions. They asked me to continue part-time this fall.</p>
+
   <h3>Euler AI — Chennai, 2023 to 2025</h3>
   <p class="meta">the company my brother and I set up to build things</p>
   <p>An e-commerce shopping agent and a tool that turns medical records into billing codes; finalists at the Pear VC + OpenAI hackathon in San Francisco with the shopping agent; memory features contributed to the open-source agent libraries Mem0 and EmbedChain. <strong>What we never did:</strong> sell anything. It was research and development with no customer. <strong>What I learned:</strong> building is not the same as making something people pay for, and I had the order backwards. It is why I now want the users first.</p>
@@ -79,7 +88,7 @@
   <p>A research project on self improving search, paused in March after two of five phases because I was spread across too many things. Still paused. I'd rather say that than hide it.</p>
 
   <h2>How I check whether things work</h2>
-  <p>I spent this summer testing AI systems for a living, and the main lesson was that most impressive numbers don't survive a fair test. I now run my own projects through the same kind of check before I believe them. A workshop paper of mine at RecSys 2026 makes the same argument about search: don't trust the loop until you re-score on data it never saw.</p>
+  <p>I spent this summer testing AI systems for a living, and the main lesson was that most impressive numbers don't survive a fair test. I now run my own projects through the same kind of check before I believe them. The RecSys paper above is the same argument about search: don't trust the loop until you re-score on data it never saw.</p>
 
   <h2>Building with people</h2>
   <p>Everything I build alone ends up engineer heavy. I'm looking for a design or product person to build with; I build the core myself. <a href="mailto:rayhanbasheerpatel@gmail.com">rayhanbasheerpatel@gmail.com</a> · <a href="https://github.com/Rayhanpatel">GitHub</a></p>
