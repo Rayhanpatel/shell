@@ -35,7 +35,7 @@
 <body>
 <main>
   <h1>Rayhan Patel</h1>
-  <p class="sub">MS in Applied Machine Learning, University of Maryland. For the Startup Shell reviewers: the short version first, then what I'm working on, then each build with what went wrong.</p>
+  <p class="sub">MS in Applied Machine Learning, University of Maryland. For the Startup Shell reviewers: the short version first, then what I'm working on with our two-minute YC pitch, then each build with what went wrong.</p>
 
   <ul class="hl">
     <li><b>Y Combinator × Google DeepMind × Cactus, San Francisco</b><span>Voice Agents hackathon, Apr 2026 · HVAC Copilot · top 10 of 200+ builders · <a href="https://youtu.be/w8ZFqvcm0f0">live pitch</a></span></li>
@@ -50,12 +50,13 @@
 
   <section class="now">
     <span class="tag">What I'm working on · updated Sep 9, 2026</span>
-    <p><strong>Honestly: finding who to build with, and a project that starts this week.</strong> I have shipped enough alone this year to know the part I cannot do by myself is the part after the code works: getting a thing into strangers' hands and finding out what they think. This month I am forming a team of four or five for a semester-long startup project in my NLP course that ships to real users every week until December.</p>
-    <p><strong>Three ideas on the shelf,</strong> each with something already built or learned:</p>
-    <p><strong>MedBill</strong> (below). Built, works on test bills, used by no one but me. The lived problem. It needs five people with a real bill and someone who can make it feel safe to use.</p>
-    <p><strong>AgentSync.</strong> A coordination layer for teams where every developer runs an AI coding agent: agents publish a plan and claim files before they edit, instead of colliding in git afterwards. Architecture written in March; nothing built yet; I run several coding agents a day, so I am my own first user.</p>
-    <p><strong>A daily check-in for people between mental health appointments,</strong> from long conversations with my closest friend, a psychiatrist. Conversations only so far. The hard part: a check-in a clinician would trust and a person keeps doing past week two.</p>
-    <p>I would lead any of these. I build the core and make the calls, and I want two or three people who own their part, product, design or the user side, and argue with me until it is right.</p>
+    <p><strong>HVAC Copilot, continued.</strong> Two minutes: our live pitch at Y Combinator, April 2026.</p>
+    <div class="video"><iframe src="https://www.youtube.com/embed/w8ZFqvcm0f0" title="HVAC Copilot, live pitch at the YC Voice Agents Hackathon" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    <p class="links"><a href="https://youtu.be/w8ZFqvcm0f0">Watch on YouTube</a><a href="https://youtube.com/shorts/xXLoZhNNC-0">60-second demo</a><a href="https://github.com/Rayhanpatel/Ycombinator-Cactus-Deepmind">Code</a></p>
+    <p><strong>What exists:</strong> a working assistant that runs entirely on a laptop or phone, hands free, with a small knowledge base of about twenty equipment entries, a tool-calling loop that passed seven of eight cases in our test set, and an AR-glasses path that is too slow at about twenty seconds a turn. Used by us at the hackathon; no technician has used it on a real job yet.</p>
+    <p><strong>What we learned before building it:</strong> technicians already ask Gemini on their phones; the help disappears exactly where they need it, because there is no signal underground; and the manufacturers' service documentation is locked, so the buyer is the service company, not the technician.</p>
+    <p><strong>What's next:</strong> one technician using the phone version on real jobs for a week; two or three HVAC service companies asked about a small pilot; the documentation question settled, a license for a pilot or a knowledge base built from the company's own manuals; and latency cut, which mostly waits on faster hardware support for the on-device model.</p>
+    <p><strong>What's hard:</strong> the documentation lock, the latency on glasses, and getting a company to let a prototype onto a job site. <strong>Who I need:</strong> someone who can sell to field-service companies or already knows people in HVAC, and a product person. I lead this one; I build the core and make the calls, with whoever from the hackathon team wants to continue.</p>
   </section>
 
   <h2>What I built, and what went wrong</h2>
@@ -63,8 +64,7 @@
   <h3>HVAC Copilot — Y Combinator × Google DeepMind × Cactus hackathon, San Francisco, April 2026</h3>
   <p class="meta">team of four · top 10 of 200+ builders · whole model runs on the device, no cloud</p>
   <p>Before the event we talked to HVAC technicians. They already asked Gemini on their phones what to do next, but in basements and underground there is no signal, exactly where they need it, and their hands are busy. The manufacturers' service documentation is locked up, so this could only ever be sold to companies, not to technicians. So we built a voice and camera assistant that runs entirely on the device, hands free; I built the assistant runtime and the tool calling. <strong>What went wrong:</strong> the AR glasses path took about twenty seconds per answer, too slow for someone on a ladder, and we said so in the write-up instead of hiding it. <strong>What I learned:</strong> a demo that needs wifi is worthless to the person it's for.</p>
-  <div class="video"><iframe src="https://www.youtube.com/embed/w8ZFqvcm0f0" title="HVAC Copilot, live pitch at the YC Voice Agents Hackathon" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
-  <p class="links"><a href="https://youtu.be/w8ZFqvcm0f0">Live pitch at YC</a><a href="https://youtube.com/shorts/xXLoZhNNC-0">60-second demo</a><a href="https://github.com/Rayhanpatel/Ycombinator-Cactus-Deepmind">Code</a></p>
+  <p class="links"><a href="https://youtu.be/w8ZFqvcm0f0">Live pitch at YC (above)</a><a href="https://youtube.com/shorts/xXLoZhNNC-0">60-second demo</a><a href="https://github.com/Rayhanpatel/Ycombinator-Cactus-Deepmind">Code</a></p>
 
   <h3>EvoRank — research, RecSys 2026 workshop paper</h3>
   <p class="meta">co-authored with Shabaz Patel · GenAI for E-commerce workshop · presenting Sep 28, 2026, Minneapolis</p>
