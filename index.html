@@ -4,34 +4,49 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rayhan Patel — what I'm building</title>
-<meta name="description" content="What Rayhan Patel is working on, and five things he built this year: what broke and what he learned.">
+<meta name="description" content="Rayhan Patel: YC, Google DeepMind, RecSys 2026, Startup Shell. What I'm working on, and what I built this year with what went wrong.">
 <style>
   :root { --ink:#1b1b1b; --muted:#5f5f5f; --line:#e4e1da; --bg:#fbfaf7; --accent:#b4451f; }
   * { box-sizing:border-box; }
   body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.55 Georgia, "Times New Roman", serif; }
-  main { max-width:720px; margin:0 auto; padding:48px 20px 80px; }
+  main { max-width:760px; margin:0 auto; padding:44px 20px 80px; }
   h1 { font-size:2rem; line-height:1.15; margin:0 0 6px; }
   h2 { font-size:1.25rem; margin:44px 0 12px; padding-top:18px; border-top:1px solid var(--line); }
-  h3 { font-size:1.05rem; margin:26px 0 6px; }
+  h3 { font-size:1.08rem; margin:30px 0 4px; }
   p { margin:0 0 12px; }
-  .sub { color:var(--muted); margin-bottom:20px; }
-  .now { background:#fff; border:1px solid var(--line); border-radius:8px; padding:18px 20px; }
-  .now .tag { display:inline-block; font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); margin-bottom:8px; font-family: -apple-system, system-ui, sans-serif; }
-  .meta { color:var(--muted); font-size:.92rem; margin-bottom:6px; }
+  .sub { color:var(--muted); margin-bottom:18px; }
+  .hl { list-style:none; padding:0; margin:0 0 8px; display:grid; grid-template-columns:1fr 1fr; gap:8px 18px; font-family:-apple-system, system-ui, sans-serif; font-size:.95rem; }
+  .hl li { padding:10px 12px; background:#fff; border:1px solid var(--line); border-radius:8px; }
+  .hl b { display:block; color:var(--ink); }
+  .hl span { color:var(--muted); }
+  .now { background:#fff; border:1px solid var(--line); border-radius:8px; padding:18px 20px; margin-top:22px; }
+  .tag { display:inline-block; font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); margin-bottom:8px; font-family:-apple-system, system-ui, sans-serif; }
+  .meta { color:var(--muted); font-size:.92rem; margin-bottom:8px; font-family:-apple-system, system-ui, sans-serif; }
   .links a { margin-right:14px; }
   a { color:var(--accent); text-decoration:none; border-bottom:1px solid #e8c9bd; }
   a:hover { border-bottom-color:var(--accent); }
-  .video { position:relative; padding-top:56.25%; margin:10px 0 14px; border-radius:6px; overflow:hidden; background:#000; }
+  .video { position:relative; padding-top:56.25%; margin:10px 0 10px; border-radius:6px; overflow:hidden; background:#000; }
   .video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
-  .video.short { max-width:320px; padding-top:0; height:568px; }
+  .video.short { padding-top:0; height:560px; max-width:315px; }
   footer { margin-top:56px; color:var(--muted); font-size:.92rem; }
-  @media (max-width:520px){ body{font-size:16px} h1{font-size:1.6rem} .video.short{height:480px} }
+  @media (max-width:560px){ body{font-size:16px} h1{font-size:1.6rem} .hl{grid-template-columns:1fr} .video.short{height:480px} }
 </style>
 </head>
 <body>
 <main>
   <h1>Rayhan Patel</h1>
-  <p class="sub">MS in Applied Machine Learning at the University of Maryland, College Park. For the Startup Shell reviewers: what I'm working on, then five things I built this year and what broke.</p>
+  <p class="sub">MS in Applied Machine Learning, University of Maryland. For the Startup Shell reviewers: the short version first, then what I'm working on, then each build with what went wrong.</p>
+
+  <ul class="hl">
+    <li><b>Y Combinator × Google DeepMind × Cactus, San Francisco</b><span>Voice Agents hackathon, Apr 2026 · HVAC Copilot · top 10 of 200+ builders</span></li>
+    <li><b>RecSys 2026, workshop paper</b><span>EvoRank, co-authored with Shabaz Patel · presenting Sep 28, Minneapolis</span></li>
+    <li><b>Google DeepMind × Cactus Global Hackathon, at UMD</b><span>Feb 2026 · FunctionGemma router · 2nd place</span></li>
+    <li><b>Startup Shell × Ironsite hackathon</b><span>Feb 2026 · led Team PathGuard · built in the Shell</span></li>
+    <li><b>BigThink AI × World Labs hackathon, UMD</b><span>Mar 2026 · Auto-Eval3D · Best Scientific &amp; Engineering Application</span></li>
+    <li><b>Anthropic hackathon at UMD (Claude Builder Club)</b><span>Apr 2026 · MedBill · solo</span></li>
+    <li><b>3E, AI engineering intern</b><span>Summer 2026, Bethesda · agent memory and evaluation · asked to continue part-time</span></li>
+    <li><b>NeurIPS 2023 workshop paper</b><span>domain-specific LLM alignment · co-author</span></li>
+  </ul>
 
   <section class="now">
     <span class="tag">What I'm working on · updated Sep 9, 2026</span>
@@ -45,47 +60,53 @@
 
   <h2>What I built, and what went wrong</h2>
 
-  <h3>MedBill — Anthropic × Maryland hackathon, April 2026</h3>
-  <p class="meta">solo · personal information removed on your own laptop before anything touches the cloud</p>
-  <p>The tool I wish my family had had in 2020. Upload a hospital bill; it finds overcharges, drafts the dispute letter, and checks charity-care eligibility. <strong>What broke:</strong> the model would confidently say a billing law was violated when it wasn't, so I moved every decision that matters out of the model into plain rules it can't override. <strong>What I learned:</strong> people will not upload a medical bill to anything unless they are sure it never leaves the machine. Privacy was the product.</p>
-  <p class="links"><a href="https://github.com/Rayhanpatel/medbill">Code</a></p>
-
-  <h3>PathGuard — built at Startup Shell, February 2026</h3>
-  <p class="meta">Ironsite hackathon at Shell · team of 3, I led · ran on a phone with no internet</p>
-  <p>A trip hazard alarm for construction workers. <strong>What broke:</strong> the footage had no labels, so the model we planned to train was impossible; then the first versions flagged everything in the frame, a cable on the wall, a bucket ten feet away, and a worker would switch that off in a minute. We went zero-shot and looked only at the walking path in front of the person. Six pivots in two days. <strong>What I learned:</strong> find the one constraint that decides everything, here the network, and build around removing it.</p>
-  <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/Zr4QqsBu43g" title="PathGuard demo" allowfullscreen loading="lazy"></iframe></div>
-  <p class="links"><a href="https://github.com/Rayhanpatel/PathGuard">Code</a><a href="https://youtu.be/Zr4QqsBu43g">Demo on YouTube</a></p>
-
-  <h3>HVAC Copilot — YC hackathon, San Francisco, April 2026</h3>
-  <p class="meta">team of 4 · whole model runs on the laptop, no cloud</p>
-  <p>A voice and camera assistant for junior HVAC technicians on a roof with no signal. I built the assistant runtime and the tool calling. <strong>What broke:</strong> the AR glasses path took about twenty seconds per answer, too slow for someone on a ladder, and we said so in the write-up instead of hiding it. <strong>What I learned:</strong> a demo that needs wifi is worthless to the person it's for.</p>
-  <p class="links"><a href="https://youtube.com/shorts/xXLoZhNNC-0">60-second demo</a><a href="https://github.com/Rayhanpatel/Ycombinator-Cactus-Deepmind">Code</a></p>
-
-  <h3>Auto-Eval3D — World Labs hackathon, March 2026</h3>
-  <p class="meta">solo</p>
-  <p>Checks whether AI generated 3D worlds are geometrically consistent by walking a camera through them and grading what it sees. Won the Scientific and Engineering track. <strong>What went wrong:</strong> after the win I kept auditing the results and found the demo's worst score came from my camera rig photographing the scene from outside the room instead of inside it; the evaluator had been grading my bug, not the world. Rewrote the capture two days later. <strong>What I learned:</strong> winning does not make the number right.</p>
-  <p class="links"><a href="https://github.com/Rayhanpatel/autoeval3d">Code</a></p>
-
-  <h3>AI Resume Chatbot — live at chat.rayhanpatel.com</h3>
-  <p class="meta">solo · in production, five automatic judges score every answer</p>
-  <p>A chatbot recruiters use to ask questions about me, with five automatic judges scoring every answer. <strong>What went wrong:</strong> I once pushed a change that silently hung every request, no errors, no logs; I built ten temporary diagnostic endpoints to search the system in production and found a one-line locking bug. <strong>What I learned:</strong> keeping something alive is a different job from shipping it.</p>
-  <p class="links"><a href="https://chat.rayhanpatel.com">Try it</a><a href="https://github.com/Rayhanpatel/AI-Resume-Agent">Code</a></p>
+  <h3>HVAC Copilot — Y Combinator × Google DeepMind × Cactus hackathon, San Francisco, April 2026</h3>
+  <p class="meta">team of four · top 10 of 200+ builders · whole model runs on the device, no cloud</p>
+  <p>Before the event we talked to HVAC technicians. They already asked Gemini on their phones what to do next, but in basements and underground there is no signal, exactly where they need it, and their hands are busy. The manufacturers' service documentation is locked up, so this could only ever be sold to companies, not to technicians. So we built a voice and camera assistant that runs entirely on the device, hands free; I built the assistant runtime and the tool calling. <strong>What went wrong:</strong> the AR glasses path took about twenty seconds per answer, too slow for someone on a ladder, and we said so in the write-up instead of hiding it. <strong>What I learned:</strong> a demo that needs wifi is worthless to the person it's for.</p>
+  <div class="video short"><iframe src="https://www.youtube.com/embed/xXLoZhNNC-0" title="HVAC Copilot demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
+  <p class="links"><a href="https://youtube.com/shorts/xXLoZhNNC-0">Demo on YouTube</a><a href="https://github.com/Rayhanpatel/Ycombinator-Cactus-Deepmind">Code</a></p>
 
   <h3>EvoRank — research, RecSys 2026 workshop paper</h3>
-  <p class="meta">co-authored with Shabaz Patel · presenting in Minneapolis, Sep 28, 2026</p>
+  <p class="meta">co-authored with Shabaz Patel · GenAI for E-commerce workshop · presenting Sep 28, 2026, Minneapolis</p>
   <p>An LLM-guided loop that evolves whole search-ranking pipelines for e-commerce, tested on a public Expedia dataset with three competing goals. <strong>What went wrong:</strong> the first campaign looked like it worked and was not; its gains existed only on the small data it used to pick winners, and re-scored on sixty thousand held-out queries they were noise. We built a gate that predicts, before spending anything on the model, whether a search space has enough real signal to be worth it. The second campaign beat a tuned baseline on every objective, held up on held-out data, and landed in the top six percent of the original competition. <strong>What I learned:</strong> do not believe a loop that grades its own homework.</p>
   <p class="links"><a href="https://github.com/shabazpatel/evorank">Paper and code</a></p>
 
+  <h3>FunctionGemma router — Google DeepMind × Cactus Global Hackathon at UMD, February 2026</h3>
+  <p class="meta">solo · 2nd place · hosted by AI Tinkerers at UMD</p>
+  <p>Decides whether a small on-device model or the cloud should handle a request. <strong>What went wrong:</strong> the small model reported high confidence on every answer, right or wrong, so "fall back to the cloud when unsure" was impossible; the routing had to happen before the model ran. <strong>What I learned:</strong> that lesson went straight into PathGuard the same weekend.</p>
+  <p class="links"><a href="https://github.com/Rayhanpatel/functiongemma-hackathon">Code</a></p>
+
+  <h3>PathGuard — built at Startup Shell, Ironsite hackathon, February 2026</h3>
+  <p class="meta">team of three, I led · ran on a phone with no internet</p>
+  <p>A trip hazard alarm for construction workers. <strong>What went wrong:</strong> the footage had no labels, so the model we planned to train was impossible; then the first versions flagged everything in the frame, a cable on the wall, a bucket ten feet away, and a worker would switch that off in a minute. We went zero-shot and looked only at the walking path in front of the person. Six pivots in two days. <strong>What I learned:</strong> find the one constraint that decides everything, here the network, and build around removing it.</p>
+  <div class="video"><iframe src="https://www.youtube.com/embed/Zr4QqsBu43g" title="PathGuard demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
+  <p class="links"><a href="https://youtu.be/Zr4QqsBu43g">Demo on YouTube</a><a href="https://github.com/Rayhanpatel/PathGuard">Code</a></p>
+
+  <h3>Auto-Eval3D — BigThink AI × World Labs hackathon, UMD, March 2026</h3>
+  <p class="meta">solo · Best Scientific &amp; Engineering Application</p>
+  <p>Checks whether AI-generated 3D worlds are geometrically consistent by walking a camera through them and grading what it sees. <strong>What went wrong:</strong> after the win I kept auditing the results and found the demo's worst score came from my camera rig photographing the scene from outside the room instead of inside it; the evaluator had been grading my bug, not the world. Rewrote the capture two days later. <strong>What I learned:</strong> winning does not make the number right.</p>
+  <p class="links"><a href="https://github.com/Rayhanpatel/autoeval3d">Code</a></p>
+
+  <h3>MedBill — Anthropic hackathon at UMD, April 2026</h3>
+  <p class="meta">solo · extended in June · personal information removed on your own laptop before anything touches the cloud</p>
+  <p>The tool I wish my family had had in 2020. Upload a hospital bill; it finds overcharges, drafts the dispute letter, and checks charity-care eligibility from a pay stub, showing the exact rule that applied. <strong>What went wrong:</strong> the model would confidently say a billing law was violated when it was not, so I moved every decision that matters out of the model into plain rules it cannot override. <strong>What I learned:</strong> nobody will upload a medical bill unless they are sure it never leaves the machine. Privacy was the product. Used by no one but me so far.</p>
+  <p class="links"><a href="https://github.com/Rayhanpatel/medbill">Code</a></p>
+
   <h3>3E — AI engineering intern, summer 2026</h3>
-  <p class="meta">Bethesda, MD · AI platform team</p>
-  <p>The company was deciding how its AI agents should remember things. I benchmarked three open-source memory systems on two public benchmarks under a locked protocol, then noticed the judge model grading every answer had never itself been checked, so I calibrated it against blinded human graders. <strong>The surprise:</strong> humans accepted vague answers more often than the judge did, and the scoring rubric, not the judge model, was what mattered. Wrote the architecture proposal for the team's memory layer and helped build the service on AWS. <strong>What I learned:</strong> if the protocol is not locked, the numbers are opinions. They asked me to continue part-time this fall.</p>
+  <p class="meta">Bethesda, MD · AI platform team · asked to continue part-time this fall</p>
+  <p>The company was deciding how its AI agents should remember things. I benchmarked three open-source memory systems on two public benchmarks under a locked protocol, then noticed the judge model grading every answer had never itself been checked, so I calibrated it against blinded human graders. <strong>The surprise:</strong> humans accepted vague answers more often than the judge did, and the scoring rubric, not the judge model, was what mattered. Wrote the architecture proposal for the team's memory layer and helped build the service on AWS. <strong>What I learned:</strong> if the protocol is not locked, the numbers are opinions.</p>
+
+  <h3>AI Resume Chatbot — live at chat.rayhanpatel.com</h3>
+  <p class="meta">solo · in production, five automatic judges score every answer</p>
+  <p>A chatbot recruiters use to ask questions about me. <strong>What went wrong:</strong> I once pushed a change that silently hung every request, no errors, no logs; I built ten temporary diagnostic endpoints to search the system in production and found a one-line locking bug. <strong>What I learned:</strong> keeping something alive is a different job from shipping it.</p>
+  <p class="links"><a href="https://chat.rayhanpatel.com">Try it</a><a href="https://github.com/Rayhanpatel/AI-Resume-Agent">Code</a></p>
 
   <h3>Euler AI — Chennai, 2023 to 2025</h3>
   <p class="meta">the company my brother and I set up to build things</p>
   <p>An e-commerce shopping agent and a tool that turns medical records into billing codes; finalists at the Pear VC + OpenAI hackathon in San Francisco with the shopping agent; memory features contributed to the open-source agent libraries Mem0 and EmbedChain. <strong>What we never did:</strong> sell anything. It was research and development with no customer. <strong>What I learned:</strong> building is not the same as making something people pay for, and I had the order backwards. It is why I now want the users first.</p>
 
   <h2>One I did not finish</h2>
-  <p>A research project on self improving search, paused in March after two of five phases because I was spread across too many things. Still paused. I'd rather say that than hide it.</p>
+  <p>A research project on self-improving search, paused in March after two of five phases because I was spread across too many things. Still paused. I'd rather say that than hide it.</p>
 
   <h2>How I check whether things work</h2>
   <p>I spent this summer testing AI systems for a living, and the main lesson was that most impressive numbers don't survive a fair test. I now run my own projects through the same kind of check before I believe them. The RecSys paper above is the same argument about search: don't trust the loop until you re-score on data it never saw.</p>
@@ -93,7 +114,7 @@
   <h2>Building with people</h2>
   <p>Everything I build alone ends up engineer heavy. I'm looking for a design or product person to build with on something I lead; I build the core and make the calls. <a href="mailto:rayhanbasheerpatel@gmail.com">rayhanbasheerpatel@gmail.com</a> · <a href="https://github.com/Rayhanpatel">GitHub</a></p>
 
-  <footer>Startup Shell, Fall 2026 application. Last updated Sep 8, 2026.</footer>
+  <footer>Startup Shell, Fall 2026 application. Last updated Sep 9, 2026.</footer>
 </main>
 </body>
 </html>
